@@ -6,13 +6,20 @@
         height: 100vh;
         overflow: auto;
     }
+    .cards-main {
+            overflow: auto !important;
+            height: 75vh !important;
+        }
 
+        body {
+            padding: 29rem 0 31rem 0 !important;
+        }
     #invoice-POS {
         box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
         padding: 2mm;
         margin: 0 auto;
         width: 100%;
-        background: #f26f99;
+        background: #aadb00;
         border-radius: 10px;
     }
 
@@ -221,7 +228,7 @@
 </style>
 @section('content2')
 <div class="d-flex justify-content-center align-items-center vh-100">
-    <div class="container">
+    <div class="container col-lg-6">
         <div class="components-preview px-2">
             <div class="nk-block-head nk-block-head-lg wide-sm">
                 <div class="card-header">
@@ -231,79 +238,81 @@
                             placeholder="transaction id">
                         <input type="date" class="form-control form-control-sm rounded-0 bg-transparent text-white border border-light my-3 py-2" placeholder="Search User"
                             name="date">
-                        <button type="submit" class="btn bg-green-main rounded-0">{{ __('Search') }}</button>
+                        <button type="submit" class="btn btn-theme btn-sm">{{ __('Search') }}</button>
                     </form>
                 </div>
             </div>
-            @forelse ($commison as $item)
-                <div class="card w-100">
-                    <div id="invoice-POS">
-                        <div id="bot">
-                            <div id="table">
-                                <table>
-                                    <tr class="service">
-                                        <td class="tableitem">
-                                            <p class="itemtext">
-                                                {{ __('Commison From') }}
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p class="itemtext">
-                                                {{ @$item->commissionFrom->username }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr class="service">
-                                        <td class="tableitem">
-                                            <p class="itemtext">
-                                                {{ __('User') }}
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p class="itemtext">
-                                                {{ number_format($item->amount, 2) }}
-                                                {{ @$general->site_currency }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr class="service">
-                                        <td class="tableitem">
-                                            <p class="itemtext">
-                                                {{ __('Return Details') }}
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p class="itemtext">
-                                                {{ $item->purpouse }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <tr class="service">
-                                        <td class="tableitem">
-                                            <p class="itemtext">
-                                                {{ __('Commision Date') }}
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p class="itemtext">
-                                                {{ $item->created_at->format('y-m-d') }}
-                                            </p>
-                                        </td>
-                                    </tr>
-                                </table>
-
-
-
-                                @if ($commison->hasPages())
-                                    {{ $commison->links() }}
-                                @endif
-                            </div><!--End Table-->
-                        </div><!--End InvoiceBot-->
-                    </div><!--End Invoice-->
-                </div>
-            @empty
-                <div class="text-white">NO REFFERAL FOUND</div>
-            @endforelse
+            <div class="cards-main">
+                @forelse ($commison as $item)
+                    <div class="card w-100">
+                        <div id="invoice-POS">
+                            <div id="bot">
+                                <div id="table">
+                                    <table>
+                                        <tr class="service">
+                                            <td class="tableitem">
+                                                <p class="itemtext">
+                                                    {{ __('Commison From') }}
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p class="itemtext">
+                                                    {{ @$item->commissionFrom->username }}
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr class="service">
+                                            <td class="tableitem">
+                                                <p class="itemtext">
+                                                    {{ __('User') }}
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p class="itemtext">
+                                                    {{ number_format($item->amount, 2) }}
+                                                    {{ @$general->site_currency }}
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr class="service">
+                                            <td class="tableitem">
+                                                <p class="itemtext">
+                                                    {{ __('Return Details') }}
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p class="itemtext">
+                                                    {{ $item->purpouse }}
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr class="service">
+                                            <td class="tableitem">
+                                                <p class="itemtext">
+                                                    {{ __('Commision Date') }}
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p class="itemtext">
+                                                    {{ $item->created_at->format('y-m-d') }}
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+    
+    
+    
+                                    @if ($commison->hasPages())
+                                        {{ $commison->links() }}
+                                    @endif
+                                </div><!--End Table-->
+                            </div><!--End InvoiceBot-->
+                        </div><!--End Invoice-->
+                    </div>
+                @empty
+                    <div class="text-white">NO REFFERAL FOUND</div>
+                @endforelse
+            </div>
         </div>
     </div>
 </div>

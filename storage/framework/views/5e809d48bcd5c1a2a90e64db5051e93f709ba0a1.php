@@ -2,8 +2,8 @@
 
 <style>
     .nk-content-fluid {
-        padding: 80px 0 50px 0 !important;
-        height: 100vh;
+        /* padding: 80px 0 50px 0 !important; */
+        /* height: 6vh; */
         overflow: auto;
     }
 
@@ -12,7 +12,7 @@
         padding: 2mm;
         margin: 0 auto;
         width: 100%;
-        background: #f26f99;
+        background: #aadb00;
         border-radius: 10px;
     }
 
@@ -188,6 +188,17 @@
         background: rgba(0, 219, 49, 1);
     }
 
+/* NEW WLA  */
+.cards-main {
+        overflow: auto !important;
+        height: 80vh;
+    }
+
+    body {
+        padding: 29rem 0 31rem 0 !important;
+    }
+/* NEW WLA  */
+
     @keyframes  greenglow {
         from {
             left: -120px;
@@ -224,157 +235,160 @@
     }
 </style>
 <?php $__env->startSection('content2'); ?>
-<div class="d-flex align-items-center vh-100">
-    <div class="container col-lg-6">
-        <div class="row align-items-center page-title">
-            <div class="card-header align-items-center">
-                <h5 class="mb-sm-0 mb-2 heading text-white"><?php echo e(__('Trasaction Log')); ?></h5>
-                <form action="" method="get" class="">
-                    <input type="text" name="trx"
-                        class="form-control form-control-sm rounded-0 bg-transparent text-white border border-light my-3 py-2"
-                        placeholder="transaction id">
-                    <input type="date"
-                        class="form-control form-control-sm rounded-0 bg-transparent text-white border border-light my-3 py-2"
-                        placeholder="Search User" name="date">
-                    <button type="submit" class="btn btn-light rounded-0"><?php echo e(__('Search')); ?></button>
-                </form>
+    <div class="d-flex align-items-center vh-100">
+        <div class="container col-lg-6">
+            <div class="row align-items-center page-title">
+                <div class="card-header align-items-center">
+                    <h5 class="mb-sm-0 mb-2 heading text-white"><?php echo e(__('Trasaction Log')); ?></h5>
+                    <form action="" method="get" class="">
+                        <input type="text" name="trx"
+                            class="form-control form-control-sm rounded-0 bg-transparent text-white border border-light my-3 py-2"
+                            placeholder="transaction id">
+                        <input type="date"
+                            class="form-control form-control-sm rounded-0 bg-transparent text-white border border-light my-3 py-2"
+                            placeholder="Search User" name="date">
+                        <button type="submit" class="btn btn-light rounded-0"><?php echo e(__('Search')); ?></button>
+                    </form>
+                </div>
             </div>
-        </div>
-        <?php $__empty_1 = true; $__currentLoopData = $transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
-            <div class="card w-100">
-                <div id="invoice-POS">
-                    <div id="bot">
-                        <div id="table">
-                            <table>
-                                <tr class="service">
-                                    <td class="tableitem">
-                                        <p class="itemtext">
-                                            <?php echo e(__('Trx')); ?>
+            <div class="cards-main">
+                <?php $__empty_1 = true; $__currentLoopData = $transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $transaction): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                    <div class="card w-100">
+                        <div id="invoice-POS">
+                            <div id="bot">
+                                <div id="table">
+                                    <table>
+                                        <tr class="service">
+                                            <td class="tableitem">
+                                                <p class="itemtext">
+                                                    <?php echo e(__('Trx')); ?>
 
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="itemtext">
-                                            <?php echo e($transaction->trx); ?>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p class="itemtext">
+                                                    <?php echo e($transaction->trx); ?>
 
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr class="service">
-                                    <td class="tableitem">
-                                        <p class="itemtext">
-                                            <?php echo e(__('User')); ?>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr class="service">
+                                            <td class="tableitem">
+                                                <p class="itemtext">
+                                                    <?php echo e(__('User')); ?>
 
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="itemtext">
-                                            <?php echo e(__('User')); ?>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p class="itemtext">
+                                                    <?php echo e(__('User')); ?>
 
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr class="service">
-                                    <td class="tableitem">
-                                        <p class="itemtext">
-                                            <?php echo e(__('Gateway')); ?>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr class="service">
+                                            <td class="tableitem">
+                                                <p class="itemtext">
+                                                    <?php echo e(__('Gateway')); ?>
 
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="itemtext">
-                                            <?php echo e($transaction->gateway->gateway_name ?? 'Account Transfer'); ?>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p class="itemtext">
+                                                    <?php echo e($transaction->gateway->gateway_name ?? 'Account Transfer'); ?>
 
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr class="service">
-                                    <td class="tableitem">
-                                        <p class="itemtext">
-                                            <?php echo e(__('Amount')); ?>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr class="service">
+                                            <td class="tableitem">
+                                                <p class="itemtext">
+                                                    <?php echo e(__('Amount')); ?>
 
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="itemtext">
-                                            <?php echo e($transaction->amount); ?>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p class="itemtext">
+                                                    <?php echo e($transaction->amount); ?>
 
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr class="service">
-                                    <td class="tableitem">
-                                        <p class="itemtext">
-                                            <?php echo e(__('Currency')); ?>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr class="service">
+                                            <td class="tableitem">
+                                                <p class="itemtext">
+                                                    <?php echo e(__('Currency')); ?>
 
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="itemtext">
-                                            <?php echo e($transaction->currency); ?>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p class="itemtext">
+                                                    <?php echo e($transaction->currency); ?>
 
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr class="service">
-                                    <td class="tableitem">
-                                        <p class="itemtext">
-                                            <?php echo e(__('Charge')); ?>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr class="service">
+                                            <td class="tableitem">
+                                                <p class="itemtext">
+                                                    <?php echo e(__('Charge')); ?>
 
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="itemtext">
-                                            <?php echo e($transaction->charge . ' ' . $transaction->currency); ?>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p class="itemtext">
+                                                    <?php echo e($transaction->charge . ' ' . $transaction->currency); ?>
 
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr class="service">
-                                    <td class="tableitem">
-                                        <p class="itemtext">
-                                            <?php echo e(__('Details')); ?>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr class="service">
+                                            <td class="tableitem">
+                                                <p class="itemtext">
+                                                    <?php echo e(__('Details')); ?>
 
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="itemtext">
-                                            <?php echo e($transaction->details); ?>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p class="itemtext">
+                                                    <?php echo e($transaction->details); ?>
 
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr class="service">
-                                    <td class="tableitem">
-                                        <p class="itemtext">
-                                            <?php echo e(__('Payment Date')); ?>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr class="service">
+                                            <td class="tableitem">
+                                                <p class="itemtext">
+                                                    <?php echo e(__('Payment Date')); ?>
 
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="itemtext">
-                                            <?php echo e($transaction->created_at->format('Y-m-d')); ?>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p class="itemtext">
+                                                    <?php echo e($transaction->created_at->format('Y-m-d')); ?>
 
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
 
 
 
-                            <?php if($transactions->hasPages()): ?>
-                                <?php echo e($transactions->links()); ?>
+                                    <?php if($transactions->hasPages()): ?>
+                                        <?php echo e($transactions->links()); ?>
 
-                            <?php endif; ?>
-                        </div><!--End Table-->
-                    </div><!--End InvoiceBot-->
-                </div><!--End Invoice-->
+                                    <?php endif; ?>
+                                </div><!--End Table-->
+                            </div><!--End InvoiceBot-->
+                        </div><!--End Invoice-->
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
             </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
             <div class="text-white">NO Transaction FOUND</div>
-        <?php endif; ?>
+            <?php endif; ?>
+        </div>
     </div>
-</div>
-</div>
+    </div>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make(template() . 'layout.master2', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\ncp\resources\views/theme4/user/transaction.blade.php ENDPATH**/ ?>

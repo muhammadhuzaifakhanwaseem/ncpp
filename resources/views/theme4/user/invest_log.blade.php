@@ -2,11 +2,20 @@
 
 <style>
     .nk-content-fluid {
-        padding: 80px 0 50px 0 !important;
-        height: 100vh;
+        /* padding: 80px 0 50px 0 !important;
+        height: 100vh; */
         overflow: auto;
     }
+    /* NEW WLA  */
+.cards-main {
+        overflow: auto !important;
+        height: 80vh;
+    }
 
+    body {
+        padding: 29rem 0 31rem 0 !important;
+    }
+/* NEW WLA  */
     #invoice-POS {
         box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
         padding: 2mm;
@@ -263,7 +272,7 @@
 @section('content2')
 
 <div class="d-flex justify-content-center align-items-center vh-50">
-<div class="container">
+<div class="container col-lg-6">
     <div class="row px-2">
                             <div class="card-header  flex-wrap justify-content-between align-items-center">
                                 <form action="" method="get" class="">
@@ -276,7 +285,9 @@
                                 </form>
                             </div>
                         </div>
-                        @forelse($transactions as $key => $transaction)
+                        <div class="cards-main">
+
+                            @forelse($transactions as $key => $transaction)
                             <div class="card w-100">
                                 <div id="invoice-POS">
                                     <div id="bot">
@@ -368,8 +379,9 @@
                                 </div><!--End Invoice-->
                             </div>
                         @empty
-                            <h4 class="text-white">NO INVESTMENT FOUND</h4>
+                        <h4 class="text-white">NO INVESTMENT FOUND</h4>
                         @endforelse
+                    </div>
                         @endsection
                     </div>
                 </div>

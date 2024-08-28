@@ -2,8 +2,8 @@
 
 <style>
     .nk-content-fluid {
-        padding: 80px 0 50px 0 !important;
-        height: 100vh;
+        /* padding: 80px 0 50px 0 !important;
+        height: 100vh; */
         overflow: auto;
     }
 
@@ -12,7 +12,7 @@
         padding: 2mm;
         margin: 0 auto;
         width: 100%;
-        background: #f26f99;
+        background: #aadb00;
         border-radius: 10px;
     }
 
@@ -188,6 +188,18 @@
         background: rgba(0, 219, 49, 1);
     }
 
+    /* NEW WLA  */
+    .cards-main {
+        overflow: auto !important;
+        height: 80vh;
+    }
+
+    body {
+        padding: 29rem 0 31rem 0 !important;
+    }
+
+    /* NEW WLA  */
+
     @keyframes greenglow {
         from {
             left: -120px;
@@ -224,137 +236,138 @@
     }
 </style>
 @section('content2')
-<div class="container-fluid d-flex justify-content-between align-items-center vh-100">
-    <div class="row align-items-center page-title">
-        <div class="card-header">
-            <h5 class="mb-sm-0 mb-2 heading text-white fs-3 my-3">{{ __('Rewards') }}</h5>
-            <form action="" method="get" class="">
-                <input type="text" name="trx"
-                    class="my-3 form-control bg-transparent rounded-0 text-white border border-2 form-control-sm me-2"
-                    placeholder="transaction id">
-                <input type="date"
-                    class="my-3 form-control form-control bg-transparent rounded-0 text-white border border-2"
-                    placeholder="Search User" name="date">
-                <button type="submit" class="btn bg-green-main rounded-0">{{ __('Search') }}</button>
-            </form>
-        </div>
-    </div>
-    @forelse($transactions as $key => $transaction)
-            <div class="card w-100">
-                <div id="invoice-POS">
-                    <div id="bot">
-                        <div id="table">
-                            <table>
-                                <tr class="service">
-                                    <td class="tableitem">
-                                        <p class="itemtext">
-                                            {{ __('Trx') }}
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="itemtext">
-                                            {{ $transaction->trx }}
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr class="service">
-                                    <td class="tableitem">
-                                        <p class="itemtext">
-                                            {{ __('User') }}
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="itemtext">
-                                            {{ __('User') }}
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr class="service">
-                                    <td class="tableitem">
-                                        <p class="itemtext">
-                                            {{ __('Gateway') }}
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="itemtext">
-                                            {{ $transaction->gateway->gateway_name ?? 'Account Transfer' }}
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr class="service">
-                                    <td class="tableitem">
-                                        <p class="itemtext">
-                                            {{ __('Amount') }}
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="itemtext">
-                                            {{ $transaction->amount }}
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr class="service">
-                                    <td class="tableitem">
-                                        <p class="itemtext">
-                                            {{ __('Currency') }}
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="itemtext">
-                                            {{ $transaction->currency }}
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr class="service">
-                                    <td class="tableitem">
-                                        <p class="itemtext">
-                                            {{ __('Charge') }}
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="itemtext">
-                                            {{ $transaction->charge . ' ' . $transaction->currency }}
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr class="service">
-                                    <td class="tableitem">
-                                        <p class="itemtext">
-                                            {{ __('Details') }}
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="itemtext">
-                                            {{ $transaction->details }}
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr class="service">
-                                    <td class="tableitem">
-                                        <p class="itemtext">
-                                            {{ __('Payment Date') }}
-                                        </p>
-                                    </td>
-                                    <td>
-                                        <p class="itemtext">
-                                            {{ $transaction->created_at->format('Y-m-d') }}
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
-
-
-
-                            @if ($transactions->hasPages())
-                                {{ $transactions->links() }}
-                            @endif
-                        </div><!--End Table-->
-                    </div><!--End InvoiceBot-->
-                </div><!--End Invoice-->
+    <div class="container-fluid">
+        <div class="row align-items-center page-title">
+            <div class="card-header d-flex flex-wrap justify-content-between align-items-center">
+                <h5 class="mb-sm-0 mb-2 heading">{{ __('Rewards') }}</h5>
+                <form action="" method="get" class="d-inline-flex">
+                    <input type="text" name="trx" class="form-control form-control-sm me-2"
+                        placeholder="transaction id">
+                    <input type="date" class="form-control form-control-sm me-3" placeholder="Search User"
+                        name="date">
+                    <button type="submit" class="btn btn-theme btn-sm">{{ __('Search') }}</button>
+                </form>
             </div>
         </div>
+        <div class="cards-main">
+
+            @forelse($transactions as $key => $transaction)
+                <div class="card w-100">
+                    <div id="invoice-POS">
+                        <div id="bot">
+                            <div id="table">
+                                <table>
+                                    <tr class="service">
+                                        <td class="tableitem">
+                                            <p class="itemtext">
+                                                {{ __('Trx') }}
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="itemtext">
+                                                {{ $transaction->trx }}
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="service">
+                                        <td class="tableitem">
+                                            <p class="itemtext">
+                                                {{ __('User') }}
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="itemtext">
+                                                {{ __('User') }}
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="service">
+                                        <td class="tableitem">
+                                            <p class="itemtext">
+                                                {{ __('Gateway') }}
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="itemtext">
+                                                {{ $transaction->gateway->gateway_name ?? 'Account Transfer' }}
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="service">
+                                        <td class="tableitem">
+                                            <p class="itemtext">
+                                                {{ __('Amount') }}
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="itemtext">
+                                                {{ $transaction->amount }}
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="service">
+                                        <td class="tableitem">
+                                            <p class="itemtext">
+                                                {{ __('Currency') }}
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="itemtext">
+                                                {{ $transaction->currency }}
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="service">
+                                        <td class="tableitem">
+                                            <p class="itemtext">
+                                                {{ __('Charge') }}
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="itemtext">
+                                                {{ $transaction->charge . ' ' . $transaction->currency }}
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="service">
+                                        <td class="tableitem">
+                                            <p class="itemtext">
+                                                {{ __('Details') }}
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="itemtext">
+                                                {{ $transaction->details }}
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    <tr class="service">
+                                        <td class="tableitem">
+                                            <p class="itemtext">
+                                                {{ __('Payment Date') }}
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p class="itemtext">
+                                                {{ $transaction->created_at->format('Y-m-d') }}
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+
+                                @if ($transactions->hasPages())
+                                    {{ $transactions->links() }}
+                                @endif
+                            </div><!--End Table-->
+                        </div><!--End InvoiceBot-->
+                    </div><!--End Invoice-->
+                </div>
+            @empty
+                <h4>NO REWARDS FOUND</h4>
+            @endforelse
         </div>
-    @empty
-        <div class="text-white">NO REWARDS FOUND</div>
-    @endforelse
+    </div>
+    </div>
 @endsection

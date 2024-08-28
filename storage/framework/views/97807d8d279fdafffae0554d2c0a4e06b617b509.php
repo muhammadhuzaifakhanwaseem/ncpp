@@ -1,6 +1,3 @@
-
-
-
 <?php $__env->startSection('content2'); ?>
 <style>
     .nk-content-fluid {
@@ -357,4 +354,5 @@
 </div>
 </div>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make(template() . 'layout.master2', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\ncp\resources\views/theme4/user/deposit_log.blade.php ENDPATH**/ ?>

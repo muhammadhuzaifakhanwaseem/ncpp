@@ -1,17 +1,26 @@
 @extends(template() . 'layout.master2')
 <style>
     .nk-content-fluid {
-        padding: 80px 0 50px 0 !important;
-        height: 100vh;
+        /* padding: 80px 0 50px 0 !important;
+        height: 100vh; */
         overflow: auto;
     }
+/* NEW WLA  */
+.cards-main {
+        overflow: auto !important;
+        height: 80vh;
+    }
 
+    body {
+        padding: 29rem 0 31rem 0 !important;
+    }
+/* NEW WLA  */
     #invoice-POS {
         box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
         padding: 2mm;
         margin: 0 auto;
         width: 100%;
-        background: #f26f99;
+        background: #aadb00;
         border-radius: 10px;
     }
 
@@ -225,7 +234,7 @@
 
 @section('content2')
 <div class="d-flex justify-content-center align-items-center vh-100">
-    <div class="container">
+    <div class="container col-lg-6">
         <div class="row align-items-center page-title">
             <div class="card-header">
                 <h5 class="mb-sm-0 mb-2 heading text-white">{{ __('Interest Log') }}</h5>
@@ -236,11 +245,13 @@
                     <input type="date"
                         class="form-control form-control-sm rounded-0 bg-transparent text-white border border-light my-3 py-2"
                         placeholder="Search User" name="date">
-                    <button type="submit" class="btn bg-green-main rounded-0">{{ __('Search') }}</button>
+                    <button type="submit" class="btn btn-theme btn-sm">{{ __('Search') }}</button>
                 </form>
             </div>
         </div>
-        @forelse ($interestLogs as $log)
+        <div class="cards-main">
+
+            @forelse ($interestLogs as $log)
             <div class="card w-100">
                 <div id="invoice-POS">
                     <div id="bot">
@@ -306,6 +317,8 @@
                                 </tr>
                             </table>
 
+
+
                             @if ($interestLogs->hasPages())
                                 {{ $interestLogs->links() }}
                             @endif
@@ -316,6 +329,7 @@
         @empty
             <div class="text-white">NO Data FOUND</div>
         @endforelse
+    </div>
     </div>
 </div>
 
