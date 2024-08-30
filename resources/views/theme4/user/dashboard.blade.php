@@ -69,7 +69,6 @@
 <div class="d-flex gap-2">
 
     <div>
-        <img src="https://www.shareicon.net/data/512x512/2016/09/15/829472_man_512x512.png" width="60px" alt="">
     </div>
     <div>
         <h2 class="fw-medium fw-bold my-0 fs-1 text-white"> {{ number_format(auth()->user()->balance, 2) }} <small>{{ $general->site_currency }}</small></h2>

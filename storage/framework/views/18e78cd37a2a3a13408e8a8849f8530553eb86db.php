@@ -1,4 +1,3 @@
-
 <style>
     .dashboard-body-part {
         background: transparent !important;
@@ -39,24 +38,16 @@
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item text-white d-flex justify-content-between">
-                            <span class="fw-medium "><?php echo e(__('Bank Name')); ?></span>
+                            <span class="fw-medium "><?php echo e(__('Company Bank Name')); ?></span>
                             <span><?php echo e($gateway->gateway_parameters->name); ?></span>
                         </li>
 
                         <li class="list-group-item d-flex justify-content-between">
-                            <span class="fw-medium"><?php echo e(__('Account Number')); ?></span>
+                            <span class="fw-medium"><?php echo e(__('Company Account Number')); ?></span>
                             <span><?php echo e($gateway->gateway_parameters->account_number); ?></span>
                         </li>
 
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span class="fw-medium"><?php echo e(__('Routing Number')); ?></span>
-                            <span><?php echo e($gateway->gateway_parameters->routing_number); ?></span>
-                        </li>
-
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span class="fw-medium"><?php echo e(__('Branch Name')); ?></span>
-                            <span><?php echo e($gateway->gateway_parameters->branch_name); ?></span>
-                        </li>
+                        
 
                         <li class="list-group-item d-flex justify-content-between">
                             <span class="fw-medium"><?php echo e(__('Method Currency')); ?></span>
@@ -147,4 +138,5 @@
     </div>
 </div>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make(template() . 'layout.master2', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\ncp\resources\views/theme4/user/gateway/bank.blade.php ENDPATH**/ ?>

@@ -1,42 +1,43 @@
 @extends(template() . 'layout.master2')
 
 @section('content2')
-<div class="container-fluid">
-    <div class="row align-items-center page-title">
-                            <div class="nk-block-head-content w-100">
-                                <form action="" method="post">
-                                    @csrf
-                                    <div class="card-header px-0">
-                                        <h5 class="mb-3 mt-5 text-white">
-                                            {{ __('Current Balance: ') }} <span
-                                                class="color-change">{{ number_format(auth()->user()->balance, 2) . ' ' . $general->site_currency }}</span>
-                                        </h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="mb-0">
-                                            <label for="">{{ __('Withdraw Method') }}</label>
-                                            <select name="method" id="" class="select form-select rounded-0 bg-transparent text-white border border-light">
-                                                <option class="text-black" value="" selected>{{ __('Select Method') }}</option>
-                                                @foreach ($withdraws as $withdraw)
-                                                    <option class="text-black" value="{{ $withdraw->id }}"
-                                                        data-url="{{ route('user.withdraw.fetch', $withdraw->id) }}">
-                                                        {{ $withdraw->name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="row appendData p-3"></div>
-                                    </div>
-                                </form>
-                                <div class="col-xxl-4 col-lg-6 withdraw-ins">
-                                    <div class="site-card">
-                                        <div class="card-body">
-                                            <p class="instruction"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="container-fluid">
+        <div class="row align-items-center page-title">
+            <div class="nk-block-head-content w-100">
+                <form action="" method="post">
+                    @csrf
+                    <div class="card-header px-0">
+                        <h5 class="mb-3 mt-5 text-white">
+                            {{ __('Current Balance: ') }} <span
+                                class="color-change">{{ number_format(auth()->user()->balance, 2) . ' ' . $general->site_currency }}</span>
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-0">
+                            <label for="">{{ __('Withdraw Method') }}</label>
+                            <select name="method" id=""
+                                class="select form-select rounded-0 bg-transparent text-white border border-light">
+                                <option class="text-black" value="" selected>{{ __('Select Method') }}</option>
+                                @foreach ($withdraws as $withdraw)
+                                    <option class="text-black" value="{{ $withdraw->id }}"
+                                        data-url="{{ route('user.withdraw.fetch', $withdraw->id) }}">
+                                        {{ $withdraw->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="row appendData p-3"></div>
+                    </div>
+                </form>
+                <div class="col-xxl-4 col-lg-6 withdraw-ins">
+                    <div class="site-card">
+                        <div class="card-body">
+                            <p class="instruction"></p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @push('script')
@@ -112,10 +113,10 @@
                                 </div>
 
                                 <div class="col-md-12 p-0 mb-3">
-                                    <label for="">{{ __('Account Information') }}</label>
+<label for="">{{ __('Account Holder Name and Account Number') }}</label>
                                    <textarea class="form-control rounded-0 bg-transparent text-white border border-light" name="account_information" row="5"></textarea>
                                 </div>
-                             
+
 
                                 <div class="p-0">
                                    <button class="btn rounded-0 w-100 mt-3 bg-green-main mb-2" type="submit">{{ __('Withdraw Now') }}</button>

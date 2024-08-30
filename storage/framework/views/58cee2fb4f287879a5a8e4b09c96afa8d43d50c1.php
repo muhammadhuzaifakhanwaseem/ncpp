@@ -1,42 +1,41 @@
-
-
 <?php $__env->startSection('content2'); ?>
-<div class="container-fluid">
-    <div class="row align-items-center page-title">
-                            <div class="nk-block-head-content w-100">
-                                <form action="" method="post">
-                                    <?php echo csrf_field(); ?>
-                                    <div class="card-header px-0">
-                                        <h5 class="mb-3 mt-5 text-white">
-                                            <?php echo e(__('Current Balance: ')); ?> <span
-                                                class="color-change"><?php echo e(number_format(auth()->user()->balance, 2) . ' ' . $general->site_currency); ?></span>
-                                        </h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="mb-0">
-                                            <label for=""><?php echo e(__('Withdraw Method')); ?></label>
-                                            <select name="method" id="" class="select form-select rounded-0 bg-transparent text-white border border-light">
-                                                <option class="text-black" value="" selected><?php echo e(__('Select Method')); ?></option>
-                                                <?php $__currentLoopData = $withdraws; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $withdraw): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <option class="text-black" value="<?php echo e($withdraw->id); ?>"
-                                                        data-url="<?php echo e(route('user.withdraw.fetch', $withdraw->id)); ?>">
-                                                        <?php echo e($withdraw->name); ?></option>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                            </select>
-                                        </div>
-                                        <div class="row appendData p-3"></div>
-                                    </div>
-                                </form>
-                                <div class="col-xxl-4 col-lg-6 withdraw-ins">
-                                    <div class="site-card">
-                                        <div class="card-body">
-                                            <p class="instruction"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="container-fluid">
+        <div class="row align-items-center page-title">
+            <div class="nk-block-head-content w-100">
+                <form action="" method="post">
+                    <?php echo csrf_field(); ?>
+                    <div class="card-header px-0">
+                        <h5 class="mb-3 mt-5 text-white">
+                            <?php echo e(__('Current Balance: ')); ?> <span
+                                class="color-change"><?php echo e(number_format(auth()->user()->balance, 2) . ' ' . $general->site_currency); ?></span>
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-0">
+                            <label for=""><?php echo e(__('Withdraw Method')); ?></label>
+                            <select name="method" id=""
+                                class="select form-select rounded-0 bg-transparent text-white border border-light">
+                                <option class="text-black" value="" selected><?php echo e(__('Select Method')); ?></option>
+                                <?php $__currentLoopData = $withdraws; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $withdraw): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option class="text-black" value="<?php echo e($withdraw->id); ?>"
+                                        data-url="<?php echo e(route('user.withdraw.fetch', $withdraw->id)); ?>">
+                                        <?php echo e($withdraw->name); ?></option>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </select>
+                        </div>
+                        <div class="row appendData p-3"></div>
+                    </div>
+                </form>
+                <div class="col-xxl-4 col-lg-6 withdraw-ins">
+                    <div class="site-card">
+                        <div class="card-body">
+                            <p class="instruction"></p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startPush('script'); ?>
@@ -112,10 +111,10 @@
                                 </div>
 
                                 <div class="col-md-12 p-0 mb-3">
-                                    <label for=""><?php echo e(__('Account Information')); ?></label>
+<label for=""><?php echo e(__('Account Holder Name and Account Number')); ?></label>
                                    <textarea class="form-control rounded-0 bg-transparent text-white border border-light" name="account_information" row="5"></textarea>
                                 </div>
-                             
+
 
                                 <div class="p-0">
                                    <button class="btn rounded-0 w-100 mt-3 bg-green-main mb-2" type="submit"><?php echo e(__('Withdraw Now')); ?></button>

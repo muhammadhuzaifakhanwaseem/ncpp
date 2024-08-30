@@ -127,8 +127,13 @@
                                     <div class="row">
                                         <div class="col-auto align-self-center">
                                             <figure class="avatar avatar-30 rounded-circle coverimg vm">
+                                                @if (@Auth::user()->image)
                                                 <img id="file-id-preview"
                                                     src="{{ getFile('user', @Auth::user()->image) }}" alt="pp" />
+                                                    @else
+                                                    <img id="file-id-preview"
+                                                    src="https://www.shareicon.net/data/512x512/2016/09/15/829472_man_512x512.png" alt="pp" />
+                                                @endif
                                             </figure>
                                         </div>
                                         <div class="col ps-0 align-self-center d-none d-lg-block">
@@ -366,6 +371,7 @@
                                         <div class="col-auto align-self-center">
                                             <figure class="avatar avatar-30 rounded-circle border coverimg vm">
                                                 <img id="file-id-preview"
+                                                @
                                                     src="{{ getFile('user', @Auth::user()->image) }}" alt="pp" />
                                             </figure>
                                         </div>
@@ -429,19 +435,19 @@
                 <ul class="p-0 text-white d-flex justify-content-evenly align-items-center my-0">
                     <a href="{{ url('/dashboard') }}">
                         <li class="list-group text-center text-white" style="font-size:small;"><i
-                                class="bi bi-house fs-3" style="color:#aadb00;"></i>Dashboard</li>
+                                class="bi bi-house fs-3" style="color:#aadb00;"></i>Home</li>
                     </a>
                     <a href="{{ url('/investmentplan') }}">
                         <li class="list-group text-center text-white" style="font-size:small;"><i
                                 class="bi bi-bank fs-3" style="color:#aadb00;"></i> Investment</li>
                     </a>
-                    <a href="{{ url('/deposit') }}">
+                    <a href="{{ url('/team') }}">
                         <li class="list-group text-center text-white" style="font-size:small;"><i
-                                class="bi bi-cash-stack fs-3" style="color:#aadb00;"></i> Deposit</li>
+                                class="bi bi-people-fill fs-3" style="color:#aadb00;"></i>My Team</li>
                     </a>
-                    <a href="{{ url('/withdraw') }}">
+                    <a href="{{ url('/commision') }}">
                         <li class="list-group text-center text-white" style="font-size:small;"><i
-                                class="bi bi-wallet2 fs-3" style="color:#aadb00;"></i> Withdraw</li>
+                                class="bi bi-wallet2 fs-3" style="color:#aadb00;"></i> Refferals</li>
                     </a>
                     <a href="{{ url('/profile/setting') }}">
                         <li class="list-group text-center text-white" style="font-size:small;"><i

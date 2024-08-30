@@ -39,16 +39,16 @@
                 <div class="card-body">
                     <ul class="list-group">
                         <li class="list-group-item text-white d-flex justify-content-between">
-                            <span class="fw-medium ">{{ __('Bank Name') }}</span>
+                            <span class="fw-medium ">{{ __('Company Bank Name') }}</span>
                             <span>{{ $gateway->gateway_parameters->name }}</span>
                         </li>
 
                         <li class="list-group-item d-flex justify-content-between">
-                            <span class="fw-medium">{{ __('Account Number') }}</span>
+                            <span class="fw-medium">{{ __('Company Account Number') }}</span>
                             <span>{{ $gateway->gateway_parameters->account_number }}</span>
                         </li>
 
-                        <li class="list-group-item d-flex justify-content-between">
+                        {{-- <li class="list-group-item d-flex justify-content-between">
                             <span class="fw-medium">{{ __('Routing Number') }}</span>
                             <span>{{ $gateway->gateway_parameters->routing_number }}</span>
                         </li>
@@ -56,7 +56,7 @@
                         <li class="list-group-item d-flex justify-content-between">
                             <span class="fw-medium">{{ __('Branch Name') }}</span>
                             <span>{{ $gateway->gateway_parameters->branch_name }}</span>
-                        </li>
+                        </li> --}}
 
                         <li class="list-group-item d-flex justify-content-between">
                             <span class="fw-medium">{{ __('Method Currency') }}</span>
