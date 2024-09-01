@@ -270,9 +270,9 @@
                                                 <i class="bi bi-bank text-white fs-3"></i>
                                                 </div> -->
                                 <div class="col p-3">
-                                    <p class="fs-6 mb-1 text-black fw-bold">{{ __('Investment Plans') }}</p>
+                                    <p class="fs-6 mb-1 text-black fw-bold">{{ __('Invest Log') }}</p>
                                     <a class="text-primary text-decoration-underline"
-                                        href="{{ url('investmentplan') }}">see plans</a>
+                                        href="{{ url('invest/log') }}">see logs</a>
                                 </div>
                             </div>
                         </div>

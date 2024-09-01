@@ -266,9 +266,9 @@
                                                 <i class="bi bi-bank text-white fs-3"></i>
                                                 </div> -->
                                 <div class="col p-3">
-                                    <p class="fs-6 mb-1 text-black fw-bold"><?php echo e(__('Investment Plans')); ?></p>
+                                    <p class="fs-6 mb-1 text-black fw-bold"><?php echo e(__('Invest Log')); ?></p>
                                     <a class="text-primary text-decoration-underline"
-                                        href="<?php echo e(url('investmentplan')); ?>">see plans</a>
+                                        href="<?php echo e(url('invest/log')); ?>">see logs</a>
                                 </div>
                             </div>
                         </div>

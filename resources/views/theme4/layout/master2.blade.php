@@ -369,10 +369,9 @@
                                     aria-expanded="false" role="button">
                                     <div class="row">
                                         <div class="col-auto align-self-center">
-                                            <figure class="avatar avatar-30 rounded-circle border coverimg vm">
+                                            <figure style="background: none !important; background-image: none !important;" class="avatar avatar-30 rounded-circle border coverimg vm">
                                                 <img id="file-id-preview"
-                                                @
-                                                    src="{{ getFile('user', @Auth::user()->image) }}" alt="pp" />
+                                                    src="https://thumbs.dreamstime.com/b/icon-profile-color-green-icon-profile-color-green-circle-color-dark-green-background-color-white-194702090.jpg" alt="pp" />
                                             </figure>
                                         </div>
                                         <div class="col ps-0 align-self-center d-none d-lg-block">
