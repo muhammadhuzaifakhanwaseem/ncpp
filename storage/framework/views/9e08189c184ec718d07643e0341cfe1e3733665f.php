@@ -415,7 +415,7 @@
 
             <div class="position-fixed text-center"style="right: 10px; bottom: 70px;">
                 <!-- <i class="bi bi-whatsapp  text-green fs-1"></i> -->
-                <a target="_blank" href="https://web.whatsapp.com/">
+                <a target="_blank"  href="https://wa.me/<?php echo e($general->whatsapp_number); ?>">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png"
                         width="70px" alt="">
                     <div class="text-white">Customer Service</div>
