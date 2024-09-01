@@ -111,7 +111,10 @@
                                     <label for="">{{ __('Final Withdraw Amount') }} <span class="sp_text_danger">*</span></label>
                                     <input type="text" name="final_amo" class="form-control final_amo rounded-0 bg-transparent text-white border border-light" required readonly>
                                 </div>
-
+<div class="col-md-12 p-0 mb-3">
+                                    <label for="">{{ __('Email') }} <span class="sp_text_danger">*</span></label>
+                                    <input type="text" name="email" class="form-control charge rounded-0 bg-transparent text-white border border-light" required>
+                                </div>
                                 <div class="col-md-12 p-0 mb-3">
 <label for="">{{ __('Account Holder Name and Account Number') }}</label>
                                    <textarea class="form-control rounded-0 bg-transparent text-white border border-light" name="account_information" row="5"></textarea>
