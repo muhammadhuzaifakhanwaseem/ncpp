@@ -58,7 +58,7 @@
         .main.mainheight {}
     </style>
     <!-- balance bar -->
-     <div class="px-3">
+     <div class="px-1">
     <div class="container mb-3 px-3 py-4 rounded-5 bg-liner-red">
         @if ($uplainer_name)
             <h5 class="text-start text-theme">Uplainer Name</h5>
@@ -92,7 +92,7 @@
                     <div class="text-center mt-3">
                         <i class="bi bi-plus-circle bg-yello-green text-black fs-1 px-2 py-1 rounded-circle"></i>
                     </div>
-                    <div class="text-center text-black fw-bold mt-3 my-2">Deposit</div>
+                    <div style="font-size: 11px !important" class="text-center text-black fw-bold mt-3 my-2">Deposit</div>
                 </a>
                 </div>
 
@@ -101,7 +101,7 @@
                         <div class="text-center mt-3">
                             <i class="bi bi-credit-card-2-back bg-yello-green text-black fs-1 px-2 py-1 rounded-circle"></i>
                         </div>
-                        <div class="text-center text-black fw-bold mt-3 my-2">Withdraw</div>
+                        <div style="font-size: 11px !important" class="text-center text-black fw-bold mt-3 my-2">Withdraw</div>
                     </a>
                     </div>
 
@@ -111,7 +111,7 @@
                 <!-- <i class="bi bi-speedometer bg-yello-green text-black fs-1 px-2 py-1 rounded-circle"></i> -->
                 <i class="bi bi-trophy bg-yello-green text-black fs-1 px-2 py-1 rounded-circle"></i>
                     </div>
-                <div class="text-center text-black fw-bold mt-3 my-2">My Reward</div>
+                <div style="font-size: 11px !important" class="text-center text-black fw-bold mt-3 my-2">Reward</div>
                 </a>
                 </div>
             </div>
@@ -198,10 +198,10 @@
                             <!-- <div class="col-auto">
                                             <i class="bi bi-cash text-white fs-3"></i>
                                             </div> -->
-                            <div class="col py-3">
-                                <p class="fs-6 mb-1 text-black fw-bold">{{ __('Total Withdraw') }}</p>
+                            <div class="col py-1">
+                                <p style="font-size: 10px !important" class="fs-6  mb-1 text-black fw-boldt">{{ __('Total Withdraw') }}</p>
                                 <h5 class="text-black">{{ number_format($withdraw, 2) }}</h5>
-                                <a class="text-primary text-decoration-underline" href="{{ url('withdraw/all') }}">see
+                                <a style="font-size: 9px !important" class="text-primary text-decoration-underline" href="{{ url('withdraw/all') }}">see
                                     logs</a>
                             </div>
                         </div>
@@ -215,10 +215,10 @@
                             <!-- <div class="col-auto">
                                             <i class="bi bi-piggy-bank fs-3 text-white"></i>
                                         </div> -->
-                            <div class="col py-3">
-                                <p class="fs-6 mb-1 text-black fw-bold">{{ __('Total Deposit') }}</p>
+                            <div class="col py-1">
+                                <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">{{ __('Total Deposit') }}</p>
                                 <h5 class="text-black">{{ number_format($totalDeposit, 2) }}</h5>
-                                <a class="text-primary text-decoration-underline" href="{{ url('deposit/log') }}">see
+                                <a style="font-size: 9px !important" class="text-primary text-decoration-underline" href="{{ url('deposit/log') }}">see
                                     logs</a>
                             </div>
                         </div>
@@ -232,12 +232,12 @@
                             <!-- <div class="col-auto">
                                             <i class="bi bi-piggy-bank fs-3 text-white"></i>
                                         </div> -->
-                            <div class="col py-3">
-                                <p class="fs-6 mb-1 text-black fw-bold">{{ __('Total Team Members') }}</p>
+                            <div class="col py-1">
+                                <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">{{ __('Total Team Members') }}</p>
                                 <h5 class="text-black">{{ $TotalTeamMembers }}</h5>
-                                {{-- <a class="text-primary text-decoration-underline" href="{{ url('deposit/log') }}">see
+                                {{-- <a style="font-size: 9px !important" class="text-primary text-decoration-underline" href="{{ url('deposit/log') }}">see
                                     logs</a> --}}
-                                <a class="text-primary text-decoration-underline" href="{{ url('team') }}">My team</a>
+                                <a style="font-size: 9px !important" class="text-primary text-decoration-underline" href="{{ url('team') }}">My team</a>
                             </div>
                         </div>
                     </div>
@@ -250,12 +250,12 @@
                             <!-- <div class="col-auto">
                                             <i class="bi bi-piggy-bank fs-3 text-white"></i>
                                         </div> -->
-                            <div class="col py-3">
-                                <p class="fs-6 mb-1 text-black fw-bold">{{ __('Total Team Commission') }}</p>
+                            <div class="col py-1">
+                                <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">{{ __('Total Team Commission') }}</p>
                                 <h5 class="text-black">{{ number_format($totalTeamCom, 2) }}</h5>
-                                {{-- <a class="text-primary text-decoration-underline" href="{{ url('deposit/log') }}">see
+                                {{-- <a style="font-size: 9px !important" class="text-primary text-decoration-underline" href="{{ url('deposit/log') }}">see
                                     logs</a> --}}
-                                <a class="text-primary text-decoration-underline" href="{{ url('team') }}">see team</a>
+                                <a style="font-size: 9px !important" class="text-primary text-decoration-underline" href="{{ url('team') }}">see team</a>
                             </div>
                         </div>
                     </div>
@@ -270,8 +270,8 @@
                                                 <i class="bi bi-bank text-white fs-3"></i>
                                                 </div> -->
                                 <div class="col p-3">
-                                    <p class="fs-6 mb-1 text-black fw-bold">{{ __('Invest Log') }}</p>
-                                    <a class="text-primary text-decoration-underline"
+                                    <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">{{ __('Invest Log') }}</p>
+                                    <a style="font-size: 9px !important" class="text-primary text-decoration-underline"
                                         href="{{ url('invest/log') }}">see logs</a>
                                 </div>
                             </div>
@@ -288,8 +288,8 @@
                                                 <i class="bi bi-folder-symlink text-white fs-3"></i>
                                                 </div> -->
                                 <div class="col p-3">
-                                    <p class="fs-6 mb-1 text-black fw-bold">{{ __('Refferal Log') }}</p>
-                                    <a class="text-primary text-decoration-underline" href="{{ url('commision') }}">see
+                                    <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">{{ __('Refferal Log') }}</p>
+                                    <a style="font-size: 9px !important" class="text-primary text-decoration-underline" href="{{ url('commision') }}">see
                                         logs</a>
                                 </div>
                             </div>
@@ -306,8 +306,8 @@
                                                 <i class="bi bi-cash-coin text-white fs-3"></i>
                                                 </div> -->
                                 <div class="col p-3">
-                                    <p class="fs-6 mb-1 text-black fw-bold">{{ __('Interest Log') }}</p>
-                                    <a class="text-primary text-decoration-underline"
+                                    <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">{{ __('Interest Log') }}</p>
+                                    <a style="font-size: 9px !important" class="text-primary text-decoration-underline"
                                         href="{{ url('interest/log') }}">see logs</a>
                                 </div>
                             </div>
@@ -324,8 +324,8 @@
                                                 <i class="bi bi-cash-coin text-white fs-3"></i>
                                                 </div> -->
                                 <div class="col p-3">
-                                    <p class="fs-6 mb-1 text-black fw-bold">{{ __('Transaction Log') }}</p>
-                                    <a class="text-primary text-decoration-underline"
+                                    <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">{{ __('Transaction Log') }}</p>
+                                    <a style="font-size: 9px !important" class="text-primary text-decoration-underline"
                                         href="{{ url('transaction/log') }}">see logs</a>
                                 </div>
                             </div>

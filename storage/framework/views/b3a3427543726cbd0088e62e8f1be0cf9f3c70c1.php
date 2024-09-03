@@ -1,5 +1,3 @@
-
-
 <?php $__env->startPush('seo'); ?>
     <meta name='description' content="<?php echo e(@$general->seo_description); ?>">
 <?php $__env->stopPush(); ?>
@@ -82,7 +80,7 @@
                                 <label for="password">Password</label>
                             </div>
                             <span class="input-group-text text-secondary  border-end-0 bg-transparent text-white"
-                                id="viewpassword"><i class="bi bi-eye"></i></span>
+                                id="viewpassword"></span>
                         </div>
                     </div>
                     <div class="invalid-feedback">Enter valid password and just click again to continue </div>
@@ -131,4 +129,5 @@
     </script>
 
 <?php $__env->stopPush(); ?>
+
 <?php echo $__env->make(template() . 'layout.auth', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\ncp\resources\views/theme4/user/auth/login.blade.php ENDPATH**/ ?>

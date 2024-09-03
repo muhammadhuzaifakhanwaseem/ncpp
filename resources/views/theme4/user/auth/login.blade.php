@@ -82,7 +82,7 @@
                                 <label for="password">Password</label>
                             </div>
                             <span class="input-group-text text-secondary  border-end-0 bg-transparent text-white"
-                                id="viewpassword"><i class="bi bi-eye"></i></span>
+                                id="viewpassword"></span>
                         </div>
                     </div>
                     <div class="invalid-feedback">Enter valid password and just click again to continue </div>

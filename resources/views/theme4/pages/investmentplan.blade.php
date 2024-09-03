@@ -1,17 +1,21 @@
-@extends(template().'layout.master')
+@extends(template() . 'layout.master')
 
 @section('content')
 
+
+
+
     <section class="page-banner">
+
         <div class="container">
             <div class="row justify-content-center">
-            <div class="col-lg-6 text-center">
-                <h2 class="title text-white">{{ __($pageTitle) }}</h2>
-                <ul class="page-breadcrumb justify-content-center mt-2">
-                    <li><a href="/">{{ __('Home') }}</a></li>
-                    <li>{{ __($pageTitle) }}</li>
-                </ul>
-            </div>
+                <div class="col-lg-6 text-center">
+                    <h2 class="title text-white">{{ __($pageTitle) }}</h2>
+                    <ul class="page-breadcrumb justify-content-center mt-2">
+                        <li><a href="/">{{ __('Home') }}</a></li>
+                        <li>{{ __($pageTitle) }}</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -36,43 +40,46 @@
                             <div class="plan-fatures">
                                 <ul class="plan-list">
                                     @if ($plan->amount_type == 0)
-                                    <li>
-                                        <span class="caption">{{ __('Minimum') }} </span>
-                                        <span class="details"> {{ number_format($plan->minimum_amount, 2) . ' ' . @$general->site_currency }}</span>
-                                    </li>
-                                    <li>
-                                        <span class="caption">{{ __('Maximum') }} </span>
-                                        <span class="details"> {{ number_format($plan->maximum_amount, 2) . ' ' . @$general->site_currency }}</span>
-                                    </li>
+                                        <li>
+                                            <span class="caption">{{ __('Minimum') }} </span>
+                                            <span class="details">
+                                                {{ number_format($plan->minimum_amount, 2) . ' ' . @$general->site_currency }}</span>
+                                        </li>
+                                        <li>
+                                            <span class="caption">{{ __('Maximum') }} </span>
+                                            <span class="details">
+                                                {{ number_format($plan->maximum_amount, 2) . ' ' . @$general->site_currency }}</span>
+                                        </li>
                                     @else
-                                    <li>
-                                        <span class="caption">{{ __('Amount') }} </span>
-                                        <span class="details"> {{ number_format($plan->amount, 2) . ' ' . @$general->site_currency }}</span>
-                                    </li>
+                                        <li>
+                                            <span class="caption">{{ __('Amount') }} </span>
+                                            <span class="details">
+                                                {{ number_format($plan->amount, 2) . ' ' . @$general->site_currency }}</span>
+                                        </li>
                                     @endif
 
                                     @if ($plan->return_for == 1)
-                                    <li>
-                                        <span class="caption">{{ __('For') }} </span>
-                                        <span class="details"> {{ $plan->how_many_time }} {{ __('Times') }}</span>
-                                    </li>
+                                        <li>
+                                            <span class="caption">{{ __('For') }} </span>
+                                            <span class="details"> {{ $plan->how_many_time }} {{ __('Times') }}</span>
+                                        </li>
                                     @else
-                                    <li>
-                                        <span class="caption">{{ __('For') }} </span>
-                                        <span class="details"> {{ __('Lifetime') }}</span>
-                                    </li>
+                                        <li>
+                                            <span class="caption">{{ __('For') }} </span>
+                                            <span class="details"> {{ __('Lifetime') }}</span>
+                                        </li>
                                     @endif
 
                                     @if ($plan->capital_back == 1)
-                                    <li>
-                                        <span class="caption">{{ __('Capital Back') }} </span>
-                                        <span class="details"> {{ __('YES') }}</span>
-                                    </li>
+                                        <li>
+                                            <span class="caption">{{ __('Capital Back') }} </span>
+                                            <span class="details"> {{ __('YES') }}</span>
+                                        </li>
                                     @else
-                                    <li>
-                                        <span class="caption">{{ __('Capital Back') }} </span>
-                                        <span class="details"> {{ __('NO') }}</span>
-                                    </li>
+                                        <li>
+                                            <span class="caption">{{ __('Capital Back') }} </span>
+                                            <span class="details"> {{ __('NO') }}</span>
+                                        </li>
                                     @endif
                                 </ul>
 
@@ -80,20 +87,20 @@
                                     <h6>{{ __('ROI') }}</h6>
                                     <p class="plan-amount">
                                         {{ number_format($plan->return_interest, 2) }} @if ($plan->interest_status == 'percentage')
-                                        {{ '%' }}
+                                            {{ '%' }}
                                         @else
-                                        {{ @$general->site_currency }}
+                                            {{ @$general->site_currency }}
                                         @endif
                                     </p>
                                 </div>
 
                                 <h6 class="mt-4 mb-3">{{ __('Affiliate Bonus') }}</h6>
                                 <ul class="plan-referral">
-                                    @if($plan->referrals)
+                                    @if ($plan->referrals)
                                         @foreach ($plan->referrals->level as $key => $value)
                                             <div class="single-referral">
-                                                <span>{{$plan->referrals->commision[$key]}} %</span>
-                                                <p>{{$value}}</p>
+                                                <span>{{ $plan->referrals->commision[$key] }} %</span>
+                                                <p>{{ $value }}</p>
                                             </div>
                                         @endforeach
                                     @endif
@@ -102,16 +109,18 @@
                             </div>
                             <div class="plan-action">
                                 @if ($plan_exist >= $plan->invest_limit)
-                                <a class="main-btn plan-btn w-100 disabled" href="#">
-                                    <span>{{ __('Max Limit exceeded') }}</span>
-                                </a>
+                                    <a class="main-btn plan-btn w-100 disabled" href="#">
+                                        <span>{{ __('Max Limit exceeded') }}</span>
+                                    </a>
                                 @else
-                                <a class="main-btn plan-btn w-100" href="{{ route('user.gateways', $plan->id) }}">
-                                    <span>{{ __('Invest Now') }}</span>
-                                </a>
-                                @auth
-                                <button class="main-btn2 bg-white sp_text_dark balance w-100 mt-2" data-plan="{{ $plan }}" data-url=""><span>{{ __('Invest Using Balance') }}</span></button>
-                                @endauth
+                                    <a class="main-btn plan-btn w-100" href="{{ route('user.gateways', $plan->id) }}">
+                                        <span>{{ __('Invest Now') }}</span>
+                                    </a>
+                                    @auth
+                                        <button class="main-btn2 bg-white sp_text_dark balance w-100 mt-2"
+                                            data-plan="{{ $plan }}"
+                                            data-url=""><span>{{ __('Invest Using Balance') }}</span></button>
+                                    @endauth
                                 @endif
                             </div>
                         </div>
@@ -124,11 +133,11 @@
 
     <div class="modal fade" id="invest" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <form style="width: 100%;" action="{{route('user.investmentplan.submit')}}" method="post">
+            <form style="width: 100%;" action="{{ route('user.investmentplan.submit') }}" method="post">
                 @csrf
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">{{__('Invest Now')}}</h5>
+                        <h5 class="modal-title">{{ __('Invest Now') }}</h5>
                         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -143,8 +152,9 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('Close')}}</button>
-                        <button type="submit" class="btn main-btn"><span>{{__('Invest Now')}}</span></button>
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">{{ __('Close') }}</button>
+                        <button type="submit" class="btn main-btn"><span>{{ __('Invest Now') }}</span></button>
                     </div>
                 </div>
             </form>

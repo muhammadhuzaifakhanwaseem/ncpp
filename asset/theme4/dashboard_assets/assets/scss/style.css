@@ -14773,7 +14773,7 @@ p code {
 .card .input-group-text,
 .card .chosen-choices,
 .card .chosen-single {
-  background-color: var(--adminux-theme-bg) !important;
+  /* background-color: var(--adminux-theme-bg) !important; */
 }
 
 .dropdown-menu .amount-input,

@@ -19,11 +19,11 @@
                             <div class="row align-items-center">
                                 <div class="col-6">
                                     <h4 class="mb-1"><?php echo e($plan->plan_name); ?></h4>
-                                    <span class="details"><b>
+                                    <span tclass="details" style="font-size: 11px !important;"><b>
                                             Minimum:
                                         </b>
                                         <?php echo e(number_format($plan->minimum_amount, 2) . ' ' . @$general->site_currency); ?></span>
-                                    <span class="details"><b>
+                                    <span class="details" style="font-size: 11px !important;"><b>
                                             Maximum:
                                         </b>
                                         <?php echo e(number_format($plan->maximum_amount, 2) . ' ' . @$general->site_currency); ?></span>
