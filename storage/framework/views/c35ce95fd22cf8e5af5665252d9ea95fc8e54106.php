@@ -1,12 +1,10 @@
-
-
 <style>
     .nk-content-fluid {
         /* padding: 80px 0 50px 0 !important;
         height: 100vh; */
         overflow: auto;
     }
-    /* NEW WLA  */
+/* NEW WLA  */
 .cards-main {
         overflow: auto !important;
         height: 80vh;
@@ -21,7 +19,7 @@
         padding: 2mm;
         margin: 0 auto;
         width: 100%;
-        background: #f26f99;
+        background: #aadb00;
         border-radius: 10px;
     }
 
@@ -227,10 +225,12 @@
         color: #39f;
         text-decoration: underline;
     }
+
     /* .heading{
-        margin-top: 230px;
+        margin-top: 200px!important;
     } */
 </style>
+
 <script>
     'use strict'
 
