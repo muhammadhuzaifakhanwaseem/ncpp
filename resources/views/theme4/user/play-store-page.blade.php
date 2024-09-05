@@ -67,6 +67,29 @@
         .download-btn:hover {
             background-color: #45a049;
         }
+
+        .info-text {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .website-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .website-btn:hover {
+            background-color: #0056b3;
+        }
     </style>
 
     <script>
@@ -82,7 +105,6 @@
         }
     </script>
 
-
 </head>
 
 <body>
@@ -96,7 +118,17 @@
                 alt="Google Play">
             Download on Play Store
         </a>
+        <p class="info-text" id="iphoneMessage" style="display: none;">If you're an iPhone user, please visit our website:</p>
+        <a href="https://spark-x.online/dashboard" class="website-btn" id="websiteButton" style="display: none;">Visit Our Website</a>
     </div>
+
+    <script>
+        // Display additional content if the user is on an iPhone
+        if (/iPhone/i.test(navigator.userAgent)) {
+            document.getElementById('iphoneMessage').style.display = 'block';
+            document.getElementById('websiteButton').style.display = 'inline-flex';
+        }
+    </script>
 </body>
 
 </html>

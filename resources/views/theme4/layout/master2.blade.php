@@ -419,14 +419,15 @@
             @yield('content2')
 
 
-            <div class="position-fixed text-center"style="right: 10px; bottom: 70px;">
-                <!-- <i class="bi bi-whatsapp  text-green fs-1"></i> -->
-                <a target="_blank"  href="https://wa.me/{{ $general->whatsapp_number }}">
+            <div class="position-fixed text-center" style="right: 10px; bottom: 70px;">
+                <!-- <i class="bi bi-whatsapp text-green fs-1"></i> -->
+                <a target="_blank" href="https://wa.me/{{ $general->whatsapp_number }}" style="display: inline-flex; flex-direction: column; align-items: center; text-decoration: none;">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png"
-                        width="70px" alt="">
-                    <div class="text-white">Customer Service</div>
+                         width="40px" alt="" style="display: block;">
+                    <div class="text-white" style="font-size: 10px; margin-top: 4px;">Customer Service</div>
                 </a>
             </div>
+
 
 
             <div class="py-1 position-fixed bottom-0 w-100 start-0 my-0 d-lg-none"

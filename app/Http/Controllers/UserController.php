@@ -32,7 +32,6 @@ class UserController extends Controller
         $general = GeneralSetting::first();
         $this->template = $general->theme == 1 ? 'frontend.' : "theme{$general->theme}.";
     }
-
     public function dashboard()
     {
 
@@ -954,6 +953,7 @@ if (is_numeric($SumLvlOneDepositAmnt) && is_numeric($lastCheckedDeposit)) {
                 }
             }
         }
+        return redirect('dashboard');
     }
 
     public function pendingInvest()

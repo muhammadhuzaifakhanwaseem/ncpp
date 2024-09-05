@@ -47,6 +47,10 @@
                             <span class="fw-medium">{{ __('Company Account Number') }}</span>
                             <span>{{ $gateway->gateway_parameters->account_number }}</span>
                         </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span class="fw-medium">{{ __('Company Account Holder Name') }}</span>
+                            <span>Muhammad Tahir imran</span>
+                        </li>
 
                         {{-- <li class="list-group-item d-flex justify-content-between">
                             <span class="fw-medium">{{ __('Routing Number') }}</span>

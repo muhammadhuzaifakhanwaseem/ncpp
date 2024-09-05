@@ -46,6 +46,10 @@
                             <span class="fw-medium"><?php echo e(__('Company Account Number')); ?></span>
                             <span><?php echo e($gateway->gateway_parameters->account_number); ?></span>
                         </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span class="fw-medium"><?php echo e(__('Company Account Holder Name')); ?></span>
+                            <span>Muhammad Tahir imran</span>
+                        </li>
 
                         
 

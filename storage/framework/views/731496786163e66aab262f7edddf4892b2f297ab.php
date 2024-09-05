@@ -21,7 +21,7 @@
             var lon = position.coords.longitude;
             fetch(
                     `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`
-                    )
+                )
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById("citymy").value =
@@ -56,74 +56,98 @@
         .main.mainheight {}
     </style>
     <!-- balance bar -->
-     <div class="px-1">
-    <div class="container mb-3 px-3 py-4 rounded-5 bg-liner-red">
-        <?php if($uplainer_name): ?>
-            <h5 class="text-start text-theme">Uplainer Name</h5>
-            <p class="text-start mb-3"><?php echo e($uplainer_name->fname); ?> <?php echo e($uplainer_name->lname); ?></p>
-        <?php endif; ?>
-        <!-- Balance -->
-        <div class="d-flex gap-2 justify-content-between">
-<div class="d-flex gap-2">
+    <div class="px-1">
+        <div class="container mb-3 px-3 py-4 rounded-5 bg-liner-red">
+            <?php if($uplainer_name): ?>
+                <p style="font-size: 9px !important;color:bisque" class="text-start text-light">Uplainer Name</p>
+                <p style="font-size: 8px !important;color:bisque" class="text-start text-waring mb-3">
+                    <?php echo e($uplainer_name->fname); ?> <?php echo e($uplainer_name->lname); ?></p>
+            <?php endif; ?>
+            <!-- Balance -->
+            <div class="d-flex gap-2 justify-content-between">
+                <div class="d-flex gap-2">
 
-    <div>
-    </div>
-    <div>
-        <h2 class="fw-medium fw-bold my-0 fs-1 text-white"> <?php echo e(number_format(auth()->user()->balance, 2)); ?> <small><?php echo e($general->site_currency); ?></small></h2>
-        <p class="text-white fs-6 my-0">Current Balance</p>
-        <a class="text-danger text-decoration-underline" href="<?php echo e(url('logout')); ?>">Logout</a>
-
-    </div>
-</div>
-
-            <div class="d-flex gap-2 align-items-center">
-                <a href="">
-                    <div><i class="bi bi-arrow-clockwise text-white fs-2"></i></div>
-                </a>
-            </div>
-        </div>
-
-        <div class="bg-ligt-gray rounded-5 mt-4 py-4 px-3">
-            <div class="row">
-                <a href="<?php echo e(url('/deposit')); ?>">
-                <div class="col-lg-4 col-md-4 col-4">
-                    <div class="text-center mt-3">
-                        <i class="bi bi-plus-circle bg-yello-green text-black fs-1 px-2 py-1 rounded-circle"></i>
+                    <div>
                     </div>
-                    <div style="font-size: 11px !important" class="text-center text-black fw-bold mt-3 my-2">Deposit</div>
-                </a>
+                    <div>
+                        <h2 class="fw-medium fw-bold my-0 fs-1 text-white"> <?php echo e(number_format(auth()->user()->balance, 2)); ?>
+
+                            <small><?php echo e($general->site_currency); ?></small>
+                        </h2>
+                        <p class="text-white fs-6 my-0">Current Balance</p>
+                        <a class="text-danger text-decoration-underline" href="<?php echo e(url('logout')); ?>">Logout</a>
+
+                    </div>
+                </div>
+
+                <div class="d-flex gap-2 align-items-center">
+                    <a class="btn text-end"
+                    href="<?php echo e(url('return/interest')); ?>"
+                    style="background-color: #aadb00 !important; color: #fff !important; padding: 3px 9px !important; font-size: 12px !important; border-radius: 5px !important; text-align: center !important; display: inline-block !important; line-height: 1.5 !important; font-weight: bold; text-decoration: none; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; transition: background-color 0.3s, box-shadow 0.3s !important;"
+                    onmouseover="this.style.backgroundColor='#8cbd00'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.2)';"
+                    onmouseout="this.style.backgroundColor='#aadb00'; this.style.boxShadow='0 2px 4px rgba(0, 0, 0, 0.1)';">
+                    Claim for Profit
+                 </a>
+
+
+
+
+                    
+                </div>
+            </div>
+
+            <div class="bg-ligt-gray rounded-5 mt-4 py-4 px-3">
+                <div class="row">
+                    <a href="<?php echo e(url('/deposit')); ?>">
+                        <div class="col-lg-4 col-md-4 col-4">
+                            <div class="text-center mt-3">
+                                <i class="bi bi-plus-circle bg-yello-green text-black fs-1 px-2 py-1 rounded-circle"></i>
+                            </div>
+                            <div style="font-size: 11px !important" class="text-center text-black fw-bold mt-3 my-2">Deposit
+                            </div>
+                    </a>
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-4 border-start border-end border-dark">
-                        <a href="<?php echo e(url('/withdraw')); ?>">
+                    <a href="<?php echo e(url('/withdraw')); ?>">
                         <div class="text-center mt-3">
                             <i class="bi bi-credit-card-2-back bg-yello-green text-black fs-1 px-2 py-1 rounded-circle"></i>
                         </div>
-                        <div style="font-size: 11px !important" class="text-center text-black fw-bold mt-3 my-2">Withdraw</div>
+                        <div style="font-size: 11px !important" class="text-center text-black fw-bold mt-3 my-2">Withdraw
+                        </div>
                     </a>
-                    </div>
+                </div>
 
                 <div class="col-lg-4 col-md-4 col-4">
-                <a href="<?php echo e(url('/my/reward')); ?>">
-                <div class="text-center mt-3">
-                <!-- <i class="bi bi-speedometer bg-yello-green text-black fs-1 px-2 py-1 rounded-circle"></i> -->
-                <i class="bi bi-trophy bg-yello-green text-black fs-1 px-2 py-1 rounded-circle"></i>
-                    </div>
-                <div style="font-size: 11px !important" class="text-center text-black fw-bold mt-3 my-2">Reward</div>
-                </a>
+                    <a href="<?php echo e(url('/my/reward')); ?>">
+                        <div class="text-center mt-3">
+                            <!-- <i class="bi bi-speedometer bg-yello-green text-black fs-1 px-2 py-1 rounded-circle"></i> -->
+                            <i class="bi bi-trophy bg-yello-green text-black fs-1 px-2 py-1 rounded-circle"></i>
+                        </div>
+                        <div style="font-size: 11px !important" class="text-center text-black fw-bold mt-3 my-2">Reward
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
 
         <!-- <a href="<?php echo e(url('/deposit')); ?>" class="btn btn-theme"><i class="bi bi-plus h4"></i> Add Money</a>
-        <a href="<?php echo e(url('/withdraw')); ?>" class="btn btn-outline-theme"><i class="bi bi-wallet2 h4"></i> Withdraw</a> -->
+                    <a href="<?php echo e(url('/withdraw')); ?>" class="btn btn-outline-theme"><i class="bi bi-wallet2 h4"></i> Withdraw</a> -->
     </div>
     </div>
     <div class="container-fluid mb-4 position-relative overflow-hidden px-0">
         <div class="bigchart150 cut-5" style="height: 35px !important;">
             <canvas id="areachartblue1"></canvas>
         </div>
-        
+        <div class="container">
+            <a href="https://chat.whatsapp.com/LR9GpAagjca66TwXN9ObNq" target="_blank">
+                <div class="text-white d-flex align-items-center justify-content-center gap-2 my-2">
+                    Join Our WhatsApp Group <i class="bi bi-whatsapp text-green display-2"></i>
+                </div>
+            </a>
+
+
+        </div>
     </div>
 
 
@@ -132,48 +156,48 @@
             <!--current holding -->
             <div class="col-12 mx-auto align-self-center">
                 <!-- <div class="swiper-container pricecurrentswiper pb-4">
-                    <div class="swiper-wrapper pb-2">
-                        <div class="swiper-slide p-1 w-auto">
-                            <div class="card border-0 ">
-                                <div class="card-body">
-                                    <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <div class="avatar avatar-60 rounded bg-light-red">
-                                                <i class="bi bi-arrow-up-right h4"></i>
+                                <div class="swiper-wrapper pb-2">
+                                    <div class="swiper-slide p-1 w-auto">
+                                        <div class="card border-0 ">
+                                            <div class="card-body">
+                                                <div class="row align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="avatar avatar-60 rounded bg-light-red">
+                                                            <i class="bi bi-arrow-up-right h4"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <p class="text-white small mb-1">Today Depost</p>
+                                                        <h4 class="text-white mb-0"><span
+                                                                class="increamentcount"><?php echo e($today_deposit_amount); ?></span> <small
+                                                                class="h6"><?php echo e($general->site_currency); ?></small></h4>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col">
-                                            <p class="text-white small mb-1">Today Depost</p>
-                                            <h4 class="text-white mb-0"><span
-                                                    class="increamentcount"><?php echo e($today_deposit_amount); ?></span> <small
-                                                    class="h6"><?php echo e($general->site_currency); ?></small></h4>
+                                    </div>
+                                    <div class="swiper-slide p-1 w-auto">
+                                        <div class="card border-0 ">
+                                            <div class="card-body">
+                                                <div class="row align-items-center">
+                                                    <div class="col-auto">
+                                                        <div class="avatar avatar-60 rounded bg-light-green">
+                                                            <i class="bi bi-arrow-down-left h4"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <p class="text-white small mb-1">Today Withdraw</p>
+                                                        <h4 class="text-white mb-0"><span
+                                                                class="increamentcount"><?php echo e($today_withdraw_amount); ?></span> <small
+                                                                class="h6"><?php echo e($general->site_currency); ?></small></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide p-1 w-auto">
-                            <div class="card border-0 ">
-                                <div class="card-body">
-                                    <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <div class="avatar avatar-60 rounded bg-light-green">
-                                                <i class="bi bi-arrow-down-left h4"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <p class="text-white small mb-1">Today Withdraw</p>
-                                            <h4 class="text-white mb-0"><span
-                                                    class="increamentcount"><?php echo e($today_withdraw_amount); ?></span> <small
-                                                    class="h6"><?php echo e($general->site_currency); ?></small></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div> -->
+                                <div class="swiper-pagination"></div>
+                            </div> -->
             </div>
         </div>
     </div>
@@ -184,12 +208,14 @@
                     <div class="card-body bg-yello-green rounded-4">
                         <div class="row align-items-center">
                             <!-- <div class="col-auto">
-                                            <i class="bi bi-cash text-white fs-3"></i>
-                                            </div> -->
+                                                        <i class="bi bi-cash text-white fs-3"></i>
+                                                        </div> -->
                             <div class="col py-1">
-                                <p style="font-size: 10px !important" class="fs-6  mb-1 text-black fw-boldt"><?php echo e(__('Total Withdraw')); ?></p>
+                                <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">
+                                    <?php echo e(__('Total Withdraw')); ?></p>
                                 <h5 class="text-black"><?php echo e(number_format($withdraw, 2)); ?></h5>
-                                <a style="font-size: 9px !important" class="text-primary text-decoration-underline" href="<?php echo e(url('withdraw/all')); ?>">see
+                                <a style="font-size: 9px !important" class="text-primary text-decoration-underline"
+                                    href="<?php echo e(url('withdraw/all')); ?>">see
                                     logs</a>
                             </div>
                         </div>
@@ -201,12 +227,14 @@
                     <div class="card-body bg-yello-green rounded-4">
                         <div class="row align-items-center">
                             <!-- <div class="col-auto">
-                                            <i class="bi bi-piggy-bank fs-3 text-white"></i>
-                                        </div> -->
+                                                        <i class="bi bi-piggy-bank fs-3 text-white"></i>
+                                                    </div> -->
                             <div class="col py-1">
-                                <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold"><?php echo e(__('Total Deposit')); ?></p>
+                                <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">
+                                    <?php echo e(__('Total Deposit')); ?></p>
                                 <h5 class="text-black"><?php echo e(number_format($totalDeposit, 2)); ?></h5>
-                                <a style="font-size: 9px !important" class="text-primary text-decoration-underline" href="<?php echo e(url('deposit/log')); ?>">see
+                                <a style="font-size: 9px !important" class="text-primary text-decoration-underline"
+                                    href="<?php echo e(url('deposit/log')); ?>">see
                                     logs</a>
                             </div>
                         </div>
@@ -218,13 +246,15 @@
                     <div class="card-body bg-yello-green rounded-4">
                         <div class="row align-items-center">
                             <!-- <div class="col-auto">
-                                            <i class="bi bi-piggy-bank fs-3 text-white"></i>
-                                        </div> -->
+                                                        <i class="bi bi-piggy-bank fs-3 text-white"></i>
+                                                    </div> -->
                             <div class="col py-1">
-                                <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold"><?php echo e(__('Total Team Members')); ?></p>
+                                <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">
+                                    <?php echo e(__('Total Team Members')); ?></p>
                                 <h5 class="text-black"><?php echo e($TotalTeamMembers); ?></h5>
                                 
-                                <a style="font-size: 9px !important" class="text-primary text-decoration-underline" href="<?php echo e(url('team')); ?>">My team</a>
+                                <a style="font-size: 9px !important" class="text-primary text-decoration-underline"
+                                    href="<?php echo e(url('team')); ?>">My team</a>
                             </div>
                         </div>
                     </div>
@@ -235,13 +265,15 @@
                     <div class="card-body bg-yello-green rounded-4">
                         <div class="row align-items-center">
                             <!-- <div class="col-auto">
-                                            <i class="bi bi-piggy-bank fs-3 text-white"></i>
-                                        </div> -->
+                                                        <i class="bi bi-piggy-bank fs-3 text-white"></i>
+                                                    </div> -->
                             <div class="col py-1">
-                                <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold"><?php echo e(__('Total Team Commission')); ?></p>
+                                <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">
+                                    <?php echo e(__('Total Team Commission')); ?></p>
                                 <h5 class="text-black"><?php echo e(number_format($totalTeamCom, 2)); ?></h5>
                                 
-                                <a style="font-size: 9px !important" class="text-primary text-decoration-underline" href="<?php echo e(url('team')); ?>">see team</a>
+                                <a style="font-size: 9px !important" class="text-primary text-decoration-underline"
+                                    href="<?php echo e(url('team')); ?>">see team</a>
                             </div>
                         </div>
                     </div>
@@ -253,10 +285,11 @@
                         <div class="card-body bg-yello-green rounded-4">
                             <div class="row align-items-center">
                                 <!-- <div class="col-auto">
-                                                <i class="bi bi-bank text-white fs-3"></i>
-                                                </div> -->
+                                                            <i class="bi bi-bank text-white fs-3"></i>
+                                                            </div> -->
                                 <div class="col p-3">
-                                    <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold"><?php echo e(__('Invest Log')); ?></p>
+                                    <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">
+                                        <?php echo e(__('Invest Log')); ?></p>
                                     <a style="font-size: 9px !important" class="text-primary text-decoration-underline"
                                         href="<?php echo e(url('invest/log')); ?>">see logs</a>
                                 </div>
@@ -271,11 +304,13 @@
                         <div class="card-body bg-yello-green rounded-4">
                             <div class="row align-items-center">
                                 <!-- <div class="col-auto">
-                                                <i class="bi bi-folder-symlink text-white fs-3"></i>
-                                                </div> -->
+                                                            <i class="bi bi-folder-symlink text-white fs-3"></i>
+                                                            </div> -->
                                 <div class="col p-3">
-                                    <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold"><?php echo e(__('Refferal Log')); ?></p>
-                                    <a style="font-size: 9px !important" class="text-primary text-decoration-underline" href="<?php echo e(url('commision')); ?>">see
+                                    <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">
+                                        <?php echo e(__('Refferal Log')); ?></p>
+                                    <a style="font-size: 9px !important" class="text-primary text-decoration-underline"
+                                        href="<?php echo e(url('commision')); ?>">see
                                         logs</a>
                                 </div>
                             </div>
@@ -289,10 +324,11 @@
                         <div class="card-body bg-yello-green rounded-4">
                             <div class="row align-items-center">
                                 <!-- <div class="col-auto">
-                                                <i class="bi bi-cash-coin text-white fs-3"></i>
-                                                </div> -->
+                                                            <i class="bi bi-cash-coin text-white fs-3"></i>
+                                                            </div> -->
                                 <div class="col p-3">
-                                    <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold"><?php echo e(__('Interest Log')); ?></p>
+                                    <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">
+                                        <?php echo e(__('Profit Log')); ?></p>
                                     <a style="font-size: 9px !important" class="text-primary text-decoration-underline"
                                         href="<?php echo e(url('interest/log')); ?>">see logs</a>
                                 </div>
@@ -307,10 +343,11 @@
                         <div class="card-body bg-yello-green rounded-4">
                             <div class="row align-items-center">
                                 <!-- <div class="col-auto">
-                                                <i class="bi bi-cash-coin text-white fs-3"></i>
-                                                </div> -->
+                                                            <i class="bi bi-cash-coin text-white fs-3"></i>
+                                                            </div> -->
                                 <div class="col p-3">
-                                    <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold"><?php echo e(__('Transaction Log')); ?></p>
+                                    <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">
+                                        <?php echo e(__('Transaction Log')); ?></p>
                                     <a style="font-size: 9px !important" class="text-primary text-decoration-underline"
                                         href="<?php echo e(url('transaction/log')); ?>">see logs</a>
                                 </div>
