@@ -1,4 +1,3 @@
-
 <style>
     .payment-box {
         background: #aef32d;
@@ -77,7 +76,7 @@
                                                         <div class="form-group p-0">
                                                             <label for=""><?php echo e(__('Amount')); ?></label>
                                                             <input type="text" name="amount"
-                                                                class="form-control text-white"
+                                                                class="form-control"
                                                                 placeholder="<?php echo e(__('Enter Amount')); ?>">
 
                                                             <input type="hidden" name="user_id text-white" class="form-control"

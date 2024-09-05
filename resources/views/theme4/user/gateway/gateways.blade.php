@@ -191,7 +191,7 @@
                                                         <div class="form-group p-0">
                                                             <label for="">{{ __('Amount') }}</label>
                                                             <input type="text" name="amount"
-                                                                class="form-control text-white"
+                                                                class="form-control"
                                                                 placeholder="{{ __('Enter Amount') }}">
 
                                                             <input type="hidden" name="user_id text-white" class="form-control"

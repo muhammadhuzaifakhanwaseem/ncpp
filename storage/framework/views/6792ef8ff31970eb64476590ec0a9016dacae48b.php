@@ -174,7 +174,7 @@
                 <div class="modal-body p-0">
                     <div class="form-group mb-1">
                         <input type="number" placeholder="Enter the amount you want to invest:" name="amount"
-                            class="form-control modal_amount">
+                            class="form-control modal_amount text">
                         <p class="modal-table-p text-danger modal-error-message"></p>
                         <input type="hidden" name="plan_id" class="form-control">
                         <input type="hidden" name="plan_percentage" class="form-control">
