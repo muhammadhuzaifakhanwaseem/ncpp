@@ -156,7 +156,7 @@
                                 <span class="input-group-text text-white border-end-0 bg-transparent text-white"><i
                                         class="bi bi-key"></i></span>
                                 <div class="form-floating">
-                                    <input type="text" class="form-control border-start-0 bg-transparent"
+                                    <input type="text" class="form-control border-start-0 bg-transparent text-white"
                                         placeholder="Enter Phone" name="password_confirmation"
                                         id="password_confirmation" placeholder="{{ __('Confirm Password') }}">
                                     <label for="confirm_password">Confirm Password</label>
