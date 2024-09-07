@@ -147,6 +147,11 @@
             </a>
 
 
+            <p class="text-white">if your level one team deposit Reach 50K you will claim the reward 3% of the amount</p>
+            <div class="bg-ligt-gray rounded-4 my-3 py-3 px-3">
+                <div class=" text-black p-3 fw-bold">Deposit 50000 on Level 1, and Enjoy 3% cashback Reward</div>
+                <a href="<?php echo e(url('/my/reward')); ?>" class="btn w-100 fw-bold bg-yello-green py-3">Reward <i class="bi bi-trophy"></i></a>
+            </div>
         </div>
     </div>
 

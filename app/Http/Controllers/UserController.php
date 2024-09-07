@@ -206,7 +206,7 @@ if (is_numeric($SumLvlOneDepositAmnt) && is_numeric($lastCheckedDeposit)) {
             'amount' => $increments * 3000, // The reward amount
             'currency' => @$general->site_currency,
             'charge' => 0,
-            'details' => 'Level One 1 lack Achieve Reward',
+            'details' => 'Level One 50k Achieve Reward',
             'type' => '+',
             'gateway_transaction' => '',
             'payment_status' => 1,
