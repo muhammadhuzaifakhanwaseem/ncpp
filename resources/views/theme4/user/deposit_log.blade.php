@@ -231,6 +231,27 @@
             color: #39f;
             text-decoration: underline;
         }
+        .bg-accepted {
+    background-color: #d4edda;
+    padding: 0.2em;
+    border-radius: 0.2em;
+}
+.bg-pending {
+    background-color: #fff3cd;
+    padding: 0.2em;
+    border-radius: 0.2em;
+}
+.bg-rejected {
+    background-color: #f8d7da;
+    padding: 0.2em;
+    border-radius: 0.2em;
+}
+.bg-unknown {
+    background-color: #e2e3e5;
+    padding: 0.2em;
+    border-radius: 0.2em;
+}
+
     </style>
     <div class="d-flex flex-column justify-content-center align-items-center vh-100">
         <div class="container col-lg-6">
@@ -280,6 +301,33 @@
                                                 </p>
                                             </td>
                                         </tr>
+                                        <tr class="service">
+                                            <td class="tableitem">
+                                                <p class="itemtext">
+                                                    {{ __('Status') }}
+                                                </p>
+                                            </td>
+                                            <td>
+                                                @if (@$transaction->payment_status == 1)
+                                                    <p class="itemtext">
+                                                        <span class="bg-accepted text-success fw-bold">Accepted</span>
+                                                    </p>
+                                                @elseif (@$transaction->payment_status == 2)
+                                                    <p class="itemtext">
+                                                        <span class="bg-pending text-warning fw-bold">Pending</span>
+                                                    </p>
+                                                @elseif (@$transaction->payment_status == 3)
+                                                    <p class="itemtext">
+                                                        <span class="bg-rejected text-danger fw-bold">Rejected</span>
+                                                    </p>
+                                                @else
+                                                    <p class="itemtext">
+                                                        <span class="bg-unknown text-dark fw-bold">Unknown</span>
+                                                    </p>
+                                                @endif
+                                            </td>
+                                        </tr>
+
                                         <tr class="service">
                                             <td class="tableitem">
                                                 <p class="itemtext">

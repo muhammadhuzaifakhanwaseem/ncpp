@@ -192,7 +192,7 @@ $lastCheckedDeposit = $user->last_checked_deposit ?? 0; // Default to 0 if null
 
 // deposit reward work
 if (is_numeric($SumLvlOneDepositAmnt) && is_numeric($lastCheckedDeposit)) {
-    $increments = floor(($SumLvlOneDepositAmnt - $lastCheckedDeposit) / 100000);
+    $increments = floor(($SumLvlOneDepositAmnt - $lastCheckedDeposit) / 50000);
 
     if ($increments > 0) {
         $user->balance += $increments * 3000; // Add 3000 Rs for each increment of 100,000
