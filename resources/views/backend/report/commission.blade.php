@@ -10,6 +10,9 @@
             <div class="section-body">
                 <div class="row">
                     <div class="col-md-12">
+                        <h5>
+                            {{  }}
+                        </h5>
                         <div class="card">
                             <div class="card-body p-2">
 
@@ -43,7 +46,7 @@
                                     </tbody>
 
 
-                                   
+
 
                                 </table>
 
@@ -86,7 +89,7 @@
         .pagination .page-item.active .page-link:hover {
             background-color: rgb(95, 116, 235);
         }
-        
+
          th,td{
             text-align: center !important;
         }

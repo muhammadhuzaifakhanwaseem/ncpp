@@ -1,4 +1,3 @@
-
 <?php $__env->startSection('content2'); ?>
     <style>
         .small-text {
@@ -163,19 +162,7 @@
                                         <hr class="border-success">
                                         <p class="text-light m-0 small-text">This Month: <?php echo e($totalThisMonthUsers); ?></p>
                                     </div>
-                                    <div class="col-lg-4 col-md-4 col-4 border border-success p-3">
-                                        <h6 class="text-white fw-bold m-0">Total Commision:
-                                            <?php echo e(round($totalTeamCom, 2)); ?></h6>
-                                        <hr class="border-success">
-                                        <p class="text-light m-0 small-text">Today Commission:
-                                            <?php echo e(round($totalTodayCommission, 2)); ?></p>
-                                        <hr class="border-success">
-                                        <p class="text-light m-0 small-text">This Month Commission:
-                                            <?php echo e(round($totalmonthCommission, 2)); ?></p>
-                                    </div>
-                                </div>
-                                
-                                <div class="row">
+
                                     <div class="col-lg-4 col-md-4 col-4 border border-success p-3">
                                         <h6 class="fw-bold text-light">Level 1 Details</h6>
                                         <hr class="border-success">
@@ -184,12 +171,12 @@
                                         <hr class="border-success">
                                         <p class="text-white small-text m-0">Total Members: <?php echo e(count($LvlOneUsers)); ?></p>
                                         <hr class="border-success">
-                                        <p class="text-white small-text m-0">Total Commission:
-                                            <?php echo e(round($SumLvlOneComAmnt->total_com, 2)); ?></p>
-                                        <hr class="border-success">
-                                        <p class="text-white small-text m-0">Today Commission:
-                                            <?php echo e(round($levelOneTodayComAmnt->total_com, 2)); ?></p>
+                                        
                                     </div>
+                                </div>
+                                
+                                <div class="row">
+
                                     <div class="col-lg-4 col-md-4 col-4 border border-success p-3">
                                         <h6 class="fw-bold text-light">Level 2 Details</h6>
                                         <hr class="border-success">
@@ -198,11 +185,7 @@
                                         <hr class="border-success">
                                         <p class="text-white small-text m-0">Total Members: <?php echo e(count($LvlTwoUsers)); ?></p>
                                         <hr class="border-success">
-                                        <p class="text-white small-text m-0">Total Commission:
-                                            <?php echo e(round($SumLvlTwoComAmnt->total_com, 2)); ?></p>
-                                        <hr class="border-success">
-                                        <p class="text-white small-text m-0">Today Commission:
-                                            <?php echo e(round($levelTwoTodayComAmnt->total_com, 2)); ?></p>
+                                        
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-4 border border-success p-3">
                                         <h6 class="fw-bold text-light">Level 3 Details</h6>
@@ -212,11 +195,12 @@
                                         <hr class="border-success">
                                         <p class="text-white small-text m-0">Total Members: <?php echo e(count($LvlThreeUsers)); ?></p>
                                         <hr class="border-success">
-                                        <p class="text-white small-text m-0">Total Commission:
-                                            <?php echo e(round($SumLvlThreeComAmnt->total_com, 2)); ?></p>
-                                        <hr class="border-success">
-                                        <p class="text-white small-text m-0">Today Commission:
-                                            <?php echo e(round($levelThreeTodayComAmnt->total_com, 2)); ?></p>
+                                        
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-4 border-success p-3">
+                                        <h6 class="text-white fw-bold m-0">Total Commision:
+                                            <?php echo e(round($commison, 2)); ?></h6>
+                                        
                                     </div>
                                 </div>
                                 <div class="mt-3">

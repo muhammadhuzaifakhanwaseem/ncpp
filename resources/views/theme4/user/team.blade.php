@@ -163,19 +163,7 @@
                                         <hr class="border-success">
                                         <p class="text-light m-0 small-text">This Month: {{ $totalThisMonthUsers }}</p>
                                     </div>
-                                    <div class="col-lg-4 col-md-4 col-4 border border-success p-3">
-                                        <h6 class="text-white fw-bold m-0">Total Commision:
-                                            {{ round($totalTeamCom, 2) }}</h6>
-                                        <hr class="border-success">
-                                        <p class="text-light m-0 small-text">Today Commission:
-                                            {{ round($totalTodayCommission, 2) }}</p>
-                                        <hr class="border-success">
-                                        <p class="text-light m-0 small-text">This Month Commission:
-                                            {{ round($totalmonthCommission, 2) }}</p>
-                                    </div>
-                                </div>
-                                {{-- <hr class="border-success"> --}}
-                                <div class="row">
+
                                     <div class="col-lg-4 col-md-4 col-4 border border-success p-3">
                                         <h6 class="fw-bold text-light">Level 1 Details</h6>
                                         <hr class="border-success">
@@ -184,12 +172,16 @@
                                         <hr class="border-success">
                                         <p class="text-white small-text m-0">Total Members: {{ count($LvlOneUsers) }}</p>
                                         <hr class="border-success">
-                                        <p class="text-white small-text m-0">Total Commission:
+                                        {{-- <p class="text-white small-text m-0">Total Commission:
                                             {{ round($SumLvlOneComAmnt->total_com, 2) }}</p>
                                         <hr class="border-success">
                                         <p class="text-white small-text m-0">Today Commission:
-                                            {{ round($levelOneTodayComAmnt->total_com, 2) }}</p>
+                                            {{ round($levelOneTodayComAmnt->total_com, 2) }}</p> --}}
                                     </div>
+                                </div>
+                                {{-- <hr class="border-success"> --}}
+                                <div class="row">
+
                                     <div class="col-lg-4 col-md-4 col-4 border border-success p-3">
                                         <h6 class="fw-bold text-light">Level 2 Details</h6>
                                         <hr class="border-success">
@@ -198,11 +190,11 @@
                                         <hr class="border-success">
                                         <p class="text-white small-text m-0">Total Members: {{ count($LvlTwoUsers) }}</p>
                                         <hr class="border-success">
-                                        <p class="text-white small-text m-0">Total Commission:
+                                        {{-- <p class="text-white small-text m-0">Total Commission:
                                             {{ round($SumLvlTwoComAmnt->total_com, 2) }}</p>
                                         <hr class="border-success">
                                         <p class="text-white small-text m-0">Today Commission:
-                                            {{ round($levelTwoTodayComAmnt->total_com, 2) }}</p>
+                                            {{ round($levelTwoTodayComAmnt->total_com, 2) }}</p> --}}
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-4 border border-success p-3">
                                         <h6 class="fw-bold text-light">Level 3 Details</h6>
@@ -212,11 +204,21 @@
                                         <hr class="border-success">
                                         <p class="text-white small-text m-0">Total Members: {{ count($LvlThreeUsers) }}</p>
                                         <hr class="border-success">
-                                        <p class="text-white small-text m-0">Total Commission:
+                                        {{-- <p class="text-white small-text m-0">Total Commission:
                                             {{ round($SumLvlThreeComAmnt->total_com, 2) }}</p>
                                         <hr class="border-success">
                                         <p class="text-white small-text m-0">Today Commission:
-                                            {{ round($levelThreeTodayComAmnt->total_com, 2) }}</p>
+                                            {{ round($levelThreeTodayComAmnt->total_com, 2) }}</p> --}}
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-4 border-success p-3">
+                                        <h6 class="text-white fw-bold m-0">Total Commision:
+                                            {{ round($commison, 2) }}</h6>
+                                        {{-- <hr class="border-success">
+                                        <p class="text-light m-0 small-text">Today Commission:
+                                            {{ round($totalTodayCommission, 2) }}</p>
+                                        <hr class="border-success">
+                                        <p class="text-light m-0 small-text">This Month Commission:
+                                            {{ round($totalmonthCommission, 2) }}</p> --}}
                                     </div>
                                 </div>
                                 <div class="mt-3">

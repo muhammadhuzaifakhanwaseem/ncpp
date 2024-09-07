@@ -142,11 +142,12 @@ class ReferralController extends Controller
         if($user){
             $commison->where('reffered_by', $user->id);
         }
-        
+
         $commison = $commison->latest()->paginate();
 
         $pageTitle = 'Commission Log';
+        $Total_commison = RefferedCommission::where('reffered_by', Auth::id())->sum('amount');
 
-        return view('backend.report.commission',compact('commison','pageTitle'));
+        return view('backend.report.commission',compact('commison','pageTitle','Total_commison'));
     }
 }

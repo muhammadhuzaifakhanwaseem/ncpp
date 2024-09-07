@@ -31,7 +31,7 @@ class DepositController extends Controller
         $pageTitle = "Transactions";
 
         $transactions = Deposit::when($request->trx , function($item)use($request){ $item->where('transaction_id', $request->trx);})->
-        when($request->date, function($item) use($request) {$item->whereDate('created_at', $request->date);})->where('user_id', auth()->id())->latest()->with('user')->where('payment_status',1)->paginate();
+        when($request->date, function($item) use($request) {$item->whereDate('created_at', $request->date);})->where('user_id', auth()->id())->latest()->with('user')->paginate();
 
         return view($this->template.'user.deposit_log', compact('pageTitle', 'transactions'));
     }

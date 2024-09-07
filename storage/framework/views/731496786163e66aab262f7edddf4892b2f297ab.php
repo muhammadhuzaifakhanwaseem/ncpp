@@ -10,7 +10,7 @@
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition);
             } else {
-                document.getElementById("city").innerHTML = "Geolocation is not supported by this browser.";
+                 document.getElementById("city").innerHTML = "Geolocation is not supported by this browser.";
             }
         }
 
@@ -261,6 +261,27 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-6">
+                <a href="<?php echo e(url('commision')); ?>">
+                    <div class="card border-0 mb-4 theme-yellow bg-radial-gradient text-white">
+                        <div class="card-body bg-yello-green rounded-4">
+                            <div class="row align-items-center">
+                                <!-- <div class="col-auto">
+                                                            <i class="bi bi-folder-symlink text-white fs-3"></i>
+                                                            </div> -->
+                                <div class="col py-1">
+                                    <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">
+                                        <?php echo e(__('Total Commission')); ?></p>
+                                        <h5 class="text-black"><?php echo e(number_format($commison, 2)); ?></h5>
+                                    <a style="font-size: 9px !important" class="text-primary text-decoration-underline"
+                                        href="<?php echo e(url('commision')); ?>">see
+                                        logs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 col-6">
                 <div class="card border-0 mb-4 theme-green bg-radial-gradient text-white">
                     <div class="card-body bg-yello-green rounded-4">
                         <div class="row align-items-center">
@@ -269,12 +290,12 @@
                                                     </div> -->
                             <div class="col py-1">
                                 <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">
-                                    <?php echo e(__('Total Team Commission')); ?></p>
-                                <h5 class="text-black"><?php echo e(number_format($totalTeamCom, 2)); ?></h5>
+                                    <?php echo e(__('My Team')); ?></p>
                                 
                                 <a style="font-size: 9px !important" class="text-primary text-decoration-underline"
                                     href="<?php echo e(url('team')); ?>">see team</a>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -298,26 +319,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-lg-3 col-md-6 col-6">
-                <a href="<?php echo e(url('commision')); ?>">
-                    <div class="card border-0 mb-4 theme-yellow bg-radial-gradient text-white">
-                        <div class="card-body bg-yello-green rounded-4">
-                            <div class="row align-items-center">
-                                <!-- <div class="col-auto">
-                                                            <i class="bi bi-folder-symlink text-white fs-3"></i>
-                                                            </div> -->
-                                <div class="col p-3">
-                                    <p style="font-size: 10px !important" class="fs-6 mb-1 text-black fw-bold">
-                                        <?php echo e(__('Refferal Log')); ?></p>
-                                    <a style="font-size: 9px !important" class="text-primary text-decoration-underline"
-                                        href="<?php echo e(url('commision')); ?>">see
-                                        logs</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+
             <div class="col-lg-3 col-md-6 col-6">
                 <a href="<?php echo e(url('interest/log')); ?>">
                     <div class="card border-0 mb-4 theme-orange bg-radial-gradient text-white">

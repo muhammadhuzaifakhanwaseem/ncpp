@@ -674,6 +674,8 @@ if (is_numeric($SumLvlOneDepositAmnt) && is_numeric($lastCheckedDeposit)) {
         // This month User
 
         // perfomane chart work
+        $commison = RefferedCommission::where('reffered_by', Auth::id())->sum('amount');
+
         $pageTitle = 'My Team';
         return view($this->template . 'user.team', compact(
             'pageTitle',
@@ -697,7 +699,8 @@ if (is_numeric($SumLvlOneDepositAmnt) && is_numeric($lastCheckedDeposit)) {
             'totalTodayUsers',
             'totalThisMonthUsers',
             'totalTodayCommission',
-            'totalmonthCommission'
+            'totalmonthCommission',
+            'commison'
         ));
     }
 
