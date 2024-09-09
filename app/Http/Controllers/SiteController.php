@@ -94,7 +94,6 @@ class SiteController extends Controller
 
     public function investmentUsingBalannce(Request $request)
     {
-
         $request->validate([
             'amount' => 'required|numeric'
         ]);
@@ -102,6 +101,18 @@ class SiteController extends Controller
         $general = GeneralSetting::first();
 
         $plan_id = Plan::with('time')->findOrFail($request->plan_id);
+        $check_payments = Payment::where('plan_id', 22)
+        ->where('user_id', Auth::id())
+        ->get();
+        if ($request->plan_id == 22) {
+            // Count the number of payments for this plan by the user
+            $paymentCount = $check_payments->count();
+
+            // Check if the user has already invested 2 times or more in this plan
+            if ($paymentCount >= 2) {
+                return redirect()->back()->with('error', 'You cannot invest more than 2 times in this plan.');
+            }
+        }
 
         if ($plan_id->amount_type == 0) {
             if ($plan_id->maximum_amount) {
